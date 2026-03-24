@@ -3,6 +3,7 @@ uvicorn
 numpy
 scikit-learn
 scipy
+pandas
 jinja2
 python-multipart
 aiofiles
