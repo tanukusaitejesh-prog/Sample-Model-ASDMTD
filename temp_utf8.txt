@@ -1,0 +1,8 @@
+﻿
+======================================================================
+  CLINICAL EVALUATION REPORT ù ASD Screening Pipeline
+======================================================================
+  Dataset: 8 videos (4 ASD, 4 TD)
+  Protocol: 2-fold stratified cross-validation
+  Epochs: 5
+

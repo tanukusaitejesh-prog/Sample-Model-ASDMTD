@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD Models Evaluator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-mesh">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <h1>ASD Model Evaluator</h1>
+            <p>Upload a Multi-dimensional Pose <code>.npy</code> sequence for clinical ASD risk prediction.</p>
+        </header>
+
+        <main>
+            <section class="card upload-section">
+                <h2>1. Configure Run</h2>
+                <form id="predict-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="model-select">Select Model / Ensemble</label>
+                        <select id="model-select" name="model_selection" required>
+                            <option value="" disabled selected>Loading models...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Sequence (.npy) or Video (.mp4)</label>
+                        <div class="dropzone" id="dropzone">
+                            <input type="file" id="file-input" name="file" accept=".npy,.mp4,.avi,.mov" class="hidden-input" required>
+                            <div class="dropzone-content">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                <p id="file-name">Drag and drop or click to browse</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group toggle-group">
+                        <label class="switch-label">
+                            <input type="checkbox" id="enable-abstain">
+                            <div class="switch"></div>
+                            <span class="switch-text">Enable Abstain / Recheck (Inconclusive States)</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="btn-primary">
+                        <span class="btn-text">Run Inference</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </form>
+            </section>
+
+            <section class="card results-section hidden" id="results-card">
+                <h2>2. Prediction Results</h2>
+                
+                <div class="result-header" id="risk-banner">
+                    <div class="risk-badge" id="risk-badge">LOW_RISK</div>
+                    <div class="prob-display">
+                        <span class="prob-label">P(ASD)</span>
+                        <span class="prob-value" id="prob-value">0.000</span>
+                    </div>
+                </div>
+
+                <div class="result-details">
+                    <div class="detail-item">
+                        <span class="label">Confidence</span>
+                        <span class="value" id="conf-val">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Analyzed Clips</span>
+                        <span class="value" id="clips-val">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Temporal Consistency</span>
+                        <span class="value" id="std-val">--</span>
+                    </div>
+                    <div class="detail-item hidden" id="ensemble-std-item">
+                        <span class="label">Model Disagreement</span>
+                        <span class="value" id="model-std-val">--</span>
+                    </div>
+                </div>
+
+                <div class="abstain-alert hidden" id="abstain-alert">
+                    ⚠️ <strong>System Abstained:</strong> <span id="abstain-reason"></span>
+                </div>
+
+                <div class="analytics-section">
+                    <h3>3. Temporal Motion Analysis</h3>
+                    <div class="chart-container">
+                        <canvas id="motion-chart"></canvas>
+                    </div>
+                    <div class="motion-breakdown" id="motion-breakdown">
+                        <p class="placeholder-text">Run inference to see frame-level motion signatures.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+        <footer>
+            <p>Using MediaPipe Spatial Reconstruction Multi-stream temporal attention pipeline</p>
+        </footer>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

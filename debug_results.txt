@@ -1,0 +1,34 @@
+=== LIVE VIDEO ===
+Shape: (65, 33, 3)
+Mean: 0.090286
+Std:  0.617983
+Min:  -1.483708
+Max:  1.545558
+X mean: 0.021035  std: 0.257255
+Y mean: 0.326891  std: 0.922531
+Z mean: -0.077068  std: 0.373739
+First 3 frames joint 0:
+  Frame 0: [ 0.35126924  1.22799945 -0.72877874]
+  Frame 1: [ 0.35126924  1.22799945 -0.72877874]
+  Frame 2: [ 0.35126924  1.22799945 -0.72877874]
+
+=== TRAINING TD VIDEO ===
+Shape: (103, 33, 3)
+Mean: 0.078691
+Std:  0.633968
+Min:  -1.703819
+Max:  1.339115
+X mean: 0.069496  std: 0.370954
+Y mean: 0.186927  std: 0.995343
+Z mean: -0.020350  std: 0.236269
+First 3 frames joint 0:
+  Frame 0: [0.38305061 1.16158344 0.07236085]
+  Frame 1: [ 0.48365048  1.16203504 -0.13395851]
+  Frame 2: [ 0.55494498  1.15650674 -0.26908365]
+
+=== MODEL INFERENCE ===
+Live video probs: [0.7817, 0.7922, 0.7704, 0.7749, 0.7904]
+Live video mean:  0.7819
+Live clip details (fold 0): [0.7817, 0.7817, 0.7817]
+Train video probs: [0.17, 0.2276, 0.1713, 0.1742, 0.1517]
+Train video mean:  0.1789

@@ -1,0 +1,28 @@
+# Training data (large)
+data/asd/
+data/td/
+data/processed/
+data/processed_2/
+
+# Uploads
+uploads/
+
+# Results/logs
+results/
+__pycache__/
+*.pyc
+
+# Old models (keep saved_models_2 for deployment)
+saved_models/
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+venv/

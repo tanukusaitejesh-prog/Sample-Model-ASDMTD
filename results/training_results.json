@@ -1,0 +1,682 @@
+{
+  "n_videos": 110,
+  "n_asd": 60,
+  "n_td": 50,
+  "n_folds": 5,
+  "n_epochs": 300,
+  "fold_metrics": [
+    {
+      "auc": 1.0,
+      "accuracy": 0.9090909090909091,
+      "f1": 0.9090909090909091,
+      "sensitivity": 0.8333333333333334,
+      "specificity": 1.0,
+      "false_negative_rate": 0.16666666666666666,
+      "ppv": 1.0,
+      "npv": 0.8333333333333334,
+      "risk_breakdown": {
+        "LOW_RISK": 11,
+        "RECHECK": 1,
+        "HIGH_RISK": 10,
+        "ABSTAIN": 0
+      },
+      "risk_accuracy": {
+        "LOW_RISK": 10,
+        "RECHECK": 0,
+        "HIGH_RISK": 10
+      }
+    },
+    {
+      "auc": 1.0,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 1.0,
+      "false_negative_rate": 0.0,
+      "ppv": 1.0,
+      "npv": 1.0,
+      "risk_breakdown": {
+        "LOW_RISK": 8,
+        "RECHECK": 0,
+        "HIGH_RISK": 11,
+        "ABSTAIN": 2
+      },
+      "risk_accuracy": {
+        "LOW_RISK": 8,
+        "RECHECK": 0,
+        "HIGH_RISK": 11
+      }
+    },
+    {
+      "auc": 1.0,
+      "accuracy": 0.9090909090909091,
+      "f1": 0.9090909090909091,
+      "sensitivity": 0.8333333333333334,
+      "specificity": 1.0,
+      "false_negative_rate": 0.16666666666666666,
+      "ppv": 1.0,
+      "npv": 0.8333333333333334,
+      "risk_breakdown": {
+        "LOW_RISK": 11,
+        "RECHECK": 0,
+        "HIGH_RISK": 10,
+        "ABSTAIN": 1
+      },
+      "risk_accuracy": {
+        "LOW_RISK": 10,
+        "RECHECK": 0,
+        "HIGH_RISK": 10
+      }
+    },
+    {
+      "auc": 0.9818181818181818,
+      "accuracy": 0.9047619047619048,
+      "f1": 0.9,
+      "sensitivity": 0.8181818181818182,
+      "specificity": 1.0,
+      "false_negative_rate": 0.18181818181818182,
+      "ppv": 1.0,
+      "npv": 0.8333333333333334,
+      "risk_breakdown": {
+        "LOW_RISK": 9,
+        "RECHECK": 1,
+        "HIGH_RISK": 9,
+        "ABSTAIN": 2
+      },
+      "risk_accuracy": {
+        "LOW_RISK": 9,
+        "RECHECK": 0,
+        "HIGH_RISK": 9
+      }
+    },
+    {
+      "auc": 0.975,
+      "accuracy": 0.9545454545454546,
+      "f1": 0.96,
+      "sensitivity": 1.0,
+      "specificity": 0.9,
+      "false_negative_rate": 0.0,
+      "ppv": 0.9230769230769231,
+      "npv": 1.0,
+      "risk_breakdown": {
+        "LOW_RISK": 5,
+        "RECHECK": 0,
+        "HIGH_RISK": 13,
+        "ABSTAIN": 4
+      },
+      "risk_accuracy": {
+        "LOW_RISK": 5,
+        "RECHECK": 0,
+        "HIGH_RISK": 12
+      }
+    }
+  ],
+  "mean_metrics": {
+    "auc": {
+      "mean": 0.9913636363636364,
+      "std": 0.010794856442761751
+    },
+    "sensitivity": {
+      "mean": 0.8969696969696971,
+      "std": 0.08430562268632456
+    },
+    "specificity": {
+      "mean": 0.9800000000000001,
+      "std": 0.039999999999999994
+    },
+    "f1": {
+      "mean": 0.9356363636363636,
+      "std": 0.03851113394872357
+    },
+    "accuracy": {
+      "mean": 0.9354978354978355,
+      "std": 0.03704777990534143
+    },
+    "false_negative_rate": {
+      "mean": 0.10303030303030303,
+      "std": 0.08430562268632459
+    }
+  },
+  "per_video_results": {
+    "0_video": {
+      "prediction": 0.2482463818788528,
+      "label": 1.0,
+      "fold": 0
+    },
+    "10_video": {
+      "prediction": 0.7498289759342487,
+      "label": 1.0,
+      "fold": 0
+    },
+    "21_video": {
+      "prediction": 0.6160088082154592,
+      "label": 1.0,
+      "fold": 0
+    },
+    "24_video": {
+      "prediction": 0.7407764973847762,
+      "label": 1.0,
+      "fold": 0
+    },
+    "25_video": {
+      "prediction": 0.7492316563924154,
+      "label": 1.0,
+      "fold": 0
+    },
+    "27_video": {
+      "prediction": 0.7310217380523681,
+      "label": 1.0,
+      "fold": 0
+    },
+    "35_video": {
+      "prediction": 0.7494872609774271,
+      "label": 1.0,
+      "fold": 0
+    },
+    "40_video": {
+      "prediction": 0.7492425342400869,
+      "label": 1.0,
+      "fold": 0
+    },
+    "47_video": {
+      "prediction": 0.7486344079176585,
+      "label": 1.0,
+      "fold": 0
+    },
+    "49_video": {
+      "prediction": 0.7486676335334778,
+      "label": 1.0,
+      "fold": 0
+    },
+    "54_video": {
+      "prediction": 0.7492982372641563,
+      "label": 1.0,
+      "fold": 0
+    },
+    "59_video": {
+      "prediction": 0.7489246279001236,
+      "label": 1.0,
+      "fold": 0
+    },
+    "102_video": {
+      "prediction": 0.1912225008010864,
+      "label": 0.0,
+      "fold": 0
+    },
+    "105_video": {
+      "prediction": 0.1650049614906311,
+      "label": 0.0,
+      "fold": 0
+    },
+    "62_video": {
+      "prediction": 0.1653569508343935,
+      "label": 0.0,
+      "fold": 0
+    },
+    "66_video": {
+      "prediction": 0.17581991404294967,
+      "label": 0.0,
+      "fold": 0
+    },
+    "82_video": {
+      "prediction": 0.20248841702938078,
+      "label": 0.0,
+      "fold": 0
+    },
+    "88_video": {
+      "prediction": 0.22750853449106215,
+      "label": 0.0,
+      "fold": 0
+    },
+    "89_video": {
+      "prediction": 0.20374554693698882,
+      "label": 0.0,
+      "fold": 0
+    },
+    "90_video": {
+      "prediction": 0.19092627614736557,
+      "label": 0.0,
+      "fold": 0
+    },
+    "97_video": {
+      "prediction": 0.18623197488486765,
+      "label": 0.0,
+      "fold": 0
+    },
+    "99_video": {
+      "prediction": 0.1772914722561836,
+      "label": 0.0,
+      "fold": 0
+    },
+    "13_video": {
+      "prediction": 0.7822531196806166,
+      "label": 1.0,
+      "fold": 1
+    },
+    "17_video": {
+      "prediction": 0.6582643389701843,
+      "label": 1.0,
+      "fold": 1
+    },
+    "23_video": {
+      "prediction": 0.7807515740394593,
+      "label": 1.0,
+      "fold": 1
+    },
+    "29_video": {
+      "prediction": 0.7813319166501363,
+      "label": 1.0,
+      "fold": 1
+    },
+    "33_video": {
+      "prediction": 0.6540498435497284,
+      "label": 1.0,
+      "fold": 1
+    },
+    "38_video": {
+      "prediction": 0.6688740536570549,
+      "label": 1.0,
+      "fold": 1
+    },
+    "48_video": {
+      "prediction": 0.7211521581599587,
+      "label": 1.0,
+      "fold": 1
+    },
+    "52_video2": {
+      "prediction": 0.7818759481112162,
+      "label": 1.0,
+      "fold": 1
+    },
+    "55_video1": {
+      "prediction": 0.7815887406468391,
+      "label": 1.0,
+      "fold": 1
+    },
+    "56_video": {
+      "prediction": 0.781787782907486,
+      "label": 1.0,
+      "fold": 1
+    },
+    "6_video": {
+      "prediction": 0.7821703553199768,
+      "label": 1.0,
+      "fold": 1
+    },
+    "101_video": {
+      "prediction": 0.15982625832160313,
+      "label": 0.0,
+      "fold": 1
+    },
+    "109_video": {
+      "prediction": 0.1688523918390274,
+      "label": 0.0,
+      "fold": 1
+    },
+    "64_video": {
+      "prediction": 0.15798462182283401,
+      "label": 0.0,
+      "fold": 1
+    },
+    "65_video": {
+      "prediction": 0.5388872921466827,
+      "label": 0.0,
+      "fold": 1
+    },
+    "70_video": {
+      "prediction": 0.5020739063620567,
+      "label": 0.0,
+      "fold": 1
+    },
+    "77_video": {
+      "prediction": 0.16569266915321348,
+      "label": 0.0,
+      "fold": 1
+    },
+    "78_video": {
+      "prediction": 0.1591734758019447,
+      "label": 0.0,
+      "fold": 1
+    },
+    "85_video": {
+      "prediction": 0.16107593923807142,
+      "label": 0.0,
+      "fold": 1
+    },
+    "93_video": {
+      "prediction": 0.1646535828709602,
+      "label": 0.0,
+      "fold": 1
+    },
+    "94_video": {
+      "prediction": 0.1583189658820629,
+      "label": 0.0,
+      "fold": 1
+    },
+    "15_video": {
+      "prediction": 0.7560822864373525,
+      "label": 1.0,
+      "fold": 2
+    },
+    "20_video": {
+      "prediction": 0.31023439317941665,
+      "label": 1.0,
+      "fold": 2
+    },
+    "2_video": {
+      "prediction": 0.7568704038858414,
+      "label": 1.0,
+      "fold": 2
+    },
+    "31_video": {
+      "prediction": 0.7503591009548732,
+      "label": 1.0,
+      "fold": 2
+    },
+    "34_video": {
+      "prediction": 0.7551124691963196,
+      "label": 1.0,
+      "fold": 2
+    },
+    "36_video": {
+      "prediction": 0.7545900642871857,
+      "label": 1.0,
+      "fold": 2
+    },
+    "37_video": {
+      "prediction": 0.7650672414086082,
+      "label": 1.0,
+      "fold": 2
+    },
+    "39_video": {
+      "prediction": 0.7547277510166168,
+      "label": 1.0,
+      "fold": 2
+    },
+    "41_video": {
+      "prediction": 0.7565351724624634,
+      "label": 1.0,
+      "fold": 2
+    },
+    "45_video": {
+      "prediction": 0.7480859160423279,
+      "label": 1.0,
+      "fold": 2
+    },
+    "51_video": {
+      "prediction": 0.46749857316414517,
+      "label": 1.0,
+      "fold": 2
+    },
+    "7_video": {
+      "prediction": 0.7369346419970194,
+      "label": 1.0,
+      "fold": 2
+    },
+    "108_video": {
+      "prediction": 0.2069477178156376,
+      "label": 0.0,
+      "fold": 2
+    },
+    "63_video": {
+      "prediction": 0.2078065613905589,
+      "label": 0.0,
+      "fold": 2
+    },
+    "67_video": {
+      "prediction": 0.20417978167533873,
+      "label": 0.0,
+      "fold": 2
+    },
+    "68_video": {
+      "prediction": 0.20272645652294158,
+      "label": 0.0,
+      "fold": 2
+    },
+    "72_video": {
+      "prediction": 0.20170067474246023,
+      "label": 0.0,
+      "fold": 2
+    },
+    "73_video": {
+      "prediction": 0.20131201744079588,
+      "label": 0.0,
+      "fold": 2
+    },
+    "74_video": {
+      "prediction": 0.20512747317552565,
+      "label": 0.0,
+      "fold": 2
+    },
+    "81_video": {
+      "prediction": 0.20569956733120812,
+      "label": 0.0,
+      "fold": 2
+    },
+    "84_video": {
+      "prediction": 0.2223269760608673,
+      "label": 0.0,
+      "fold": 2
+    },
+    "86_video": {
+      "prediction": 0.2970438167452812,
+      "label": 0.0,
+      "fold": 2
+    },
+    "11_video": {
+      "prediction": 0.7786363417452032,
+      "label": 1.0,
+      "fold": 3
+    },
+    "19_video": {
+      "prediction": 0.7819690969255235,
+      "label": 1.0,
+      "fold": 3
+    },
+    "26_video": {
+      "prediction": 0.7642392590641975,
+      "label": 1.0,
+      "fold": 3
+    },
+    "28_video": {
+      "prediction": 0.7820274233818054,
+      "label": 1.0,
+      "fold": 3
+    },
+    "43_video": {
+      "prediction": 0.7809478640556335,
+      "label": 1.0,
+      "fold": 3
+    },
+    "44_video": {
+      "prediction": 0.6775926145223471,
+      "label": 1.0,
+      "fold": 3
+    },
+    "46_video": {
+      "prediction": 0.4339415654540062,
+      "label": 1.0,
+      "fold": 3
+    },
+    "4_video": {
+      "prediction": 0.5161503609269857,
+      "label": 1.0,
+      "fold": 3
+    },
+    "50_video": {
+      "prediction": 0.7721373289823532,
+      "label": 1.0,
+      "fold": 3
+    },
+    "5_video": {
+      "prediction": 0.7786648273468018,
+      "label": 1.0,
+      "fold": 3
+    },
+    "9_video": {
+      "prediction": 0.7801219522953033,
+      "label": 1.0,
+      "fold": 3
+    },
+    "103_video": {
+      "prediction": 0.2645149952173233,
+      "label": 0.0,
+      "fold": 3
+    },
+    "104_video": {
+      "prediction": 0.16965382769703863,
+      "label": 0.0,
+      "fold": 3
+    },
+    "106_video": {
+      "prediction": 0.17779265716671944,
+      "label": 0.0,
+      "fold": 3
+    },
+    "71_video1": {
+      "prediction": 0.17075061202049255,
+      "label": 0.0,
+      "fold": 3
+    },
+    "75_video": {
+      "prediction": 0.1801843851804733,
+      "label": 0.0,
+      "fold": 3
+    },
+    "80_video": {
+      "prediction": 0.6103999565045038,
+      "label": 0.0,
+      "fold": 3
+    },
+    "83_video": {
+      "prediction": 0.2429512694478035,
+      "label": 0.0,
+      "fold": 3
+    },
+    "91_video": {
+      "prediction": 0.1796137362718582,
+      "label": 0.0,
+      "fold": 3
+    },
+    "92_video": {
+      "prediction": 0.16941770017147062,
+      "label": 0.0,
+      "fold": 3
+    },
+    "95_video": {
+      "prediction": 0.253791418671608,
+      "label": 0.0,
+      "fold": 3
+    },
+    "14_video": {
+      "prediction": 0.7284733653068542,
+      "label": 1.0,
+      "fold": 4
+    },
+    "16_video": {
+      "prediction": 0.7229765504598618,
+      "label": 1.0,
+      "fold": 4
+    },
+    "18_video": {
+      "prediction": 0.7234731316566467,
+      "label": 1.0,
+      "fold": 4
+    },
+    "1_video": {
+      "prediction": 0.6905007263024648,
+      "label": 1.0,
+      "fold": 4
+    },
+    "22_video": {
+      "prediction": 0.7198446691036224,
+      "label": 1.0,
+      "fold": 4
+    },
+    "30_video": {
+      "prediction": 0.7287528812885284,
+      "label": 1.0,
+      "fold": 4
+    },
+    "32_video": {
+      "prediction": 0.727179691195488,
+      "label": 1.0,
+      "fold": 4
+    },
+    "3_video": {
+      "prediction": 0.6809332172075907,
+      "label": 1.0,
+      "fold": 4
+    },
+    "42_video": {
+      "prediction": 0.7253304421901703,
+      "label": 1.0,
+      "fold": 4
+    },
+    "53_video": {
+      "prediction": 0.7200892791152,
+      "label": 1.0,
+      "fold": 4
+    },
+    "57_video": {
+      "prediction": 0.6733638860962607,
+      "label": 1.0,
+      "fold": 4
+    },
+    "8_video": {
+      "prediction": 0.7236272394657135,
+      "label": 1.0,
+      "fold": 4
+    },
+    "100_video": {
+      "prediction": 0.2150456219911575,
+      "label": 0.0,
+      "fold": 4
+    },
+    "107_video": {
+      "prediction": 0.5260477066040039,
+      "label": 0.0,
+      "fold": 4
+    },
+    "60_video": {
+      "prediction": 0.20273957848548887,
+      "label": 0.0,
+      "fold": 4
+    },
+    "61_video": {
+      "prediction": 0.17235525101423263,
+      "label": 0.0,
+      "fold": 4
+    },
+    "69_video": {
+      "prediction": 0.43512672305107114,
+      "label": 0.0,
+      "fold": 4
+    },
+    "76_video": {
+      "prediction": 0.5260477066040039,
+      "label": 0.0,
+      "fold": 4
+    },
+    "79_video": {
+      "prediction": 0.1725484564900398,
+      "label": 0.0,
+      "fold": 4
+    },
+    "87_video": {
+      "prediction": 0.5172329097986221,
+      "label": 0.0,
+      "fold": 4
+    },
+    "96_video": {
+      "prediction": 0.28027517944574354,
+      "label": 0.0,
+      "fold": 4
+    },
+    "98_video": {
+      "prediction": 0.6905635794003805,
+      "label": 0.0,
+      "fold": 4
+    }
+  }
+}
