@@ -42,7 +42,7 @@ print(f"Loaded {len(models_dict)} fold models: {list(models_dict.keys())}")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_item(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html", context={"request": request})
 
 @app.get("/models")
 async def get_models():
