@@ -7,7 +7,7 @@ pandas
 jinja2
 python-multipart
 aiofiles
-mediapipe==0.10.14
+mediapipe
 opencv-python-headless
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch
