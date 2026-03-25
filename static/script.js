@@ -103,7 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: formData
             });
 
-            const data = await res.json();
+            if (!res.ok) {
+                const errorText = await res.text();
+                throw new Error(`Server returned ${res.status}: ${errorText.substring(0, 100)}`);
+            }
+
+            let data;
+            try {
+                data = await res.json();
+            } catch (jsonErr) {
+                const text = await res.text();
+                throw new Error(`JSON Parse Error: ${jsonErr.message}. Raw: ${text.substring(0, 100)}`);
+            }
 
             if (data.error) {
                 alert(`Error: ${data.error}`);

@@ -63,7 +63,7 @@ class SpatialSkeletonProcessor:
         
         with self.mp_pose.Pose(
             static_image_mode=False,
-            model_complexity=2,           # GHUM model
+            model_complexity=1,           # Balanced model (switched from 2 to save RAM on Render)
             enable_segmentation=False,
             min_detection_confidence=0.5,
             min_tracking_confidence=0.5
