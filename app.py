@@ -65,8 +65,7 @@ async def get_models():
     return {"models": m}
 
 @app.post("/predict")
-async def predict(file: UploadFile = File(...), form_data: dict = Form(...)):
-    model_selection = form_data.get("model_selection", "ensemble")
+async def predict(file: UploadFile = File(...), model_selection: str = Form("ensemble")):
     thumb_b64 = None
     
     if file.filename.lower().endswith('.npy'):

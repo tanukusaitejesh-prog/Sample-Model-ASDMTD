@@ -124,6 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastFilename = "";
 
     function displayResults(data, isEnsemble) {
+        if (!data || !data.risk_level) {
+            alert("Error: Incomplete diagnostic data received from server.");
+            return;
+        }
         let riskText = data.risk_level.replace('_', ' ');
         let bannerClass = data.risk_level.toLowerCase();
         
