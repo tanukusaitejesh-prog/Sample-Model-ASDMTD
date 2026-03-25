@@ -4,6 +4,14 @@ import mediapipe as mp
 import pandas as pd
 from scipy.signal import savgol_filter
 
+# Robust import for MediaPipe solutions
+try:
+    import mediapipe.python.solutions.pose as mp_pose
+    import mediapipe.python.solutions.drawing_utils as mp_drawing
+except ImportError:
+    import mediapipe.solutions.pose as mp_pose
+    import mediapipe.solutions.drawing_utils as mp_drawing
+
 class SpatialSkeletonProcessor:
     def __init__(self, fps=30, confidence_threshold=0.5, ref_frames=10, smooth_window=5, poly_order=2):
         self.fps = fps
@@ -12,7 +20,8 @@ class SpatialSkeletonProcessor:
         self.smooth_window = smooth_window
         self.poly_order = poly_order
         
-        self.mp_pose = mp.solutions.pose
+        self.mp_pose = mp_pose
+        self.mp_drawing = mp_drawing
         
         # Keypoint Indices
         self.L_HIP = 23
