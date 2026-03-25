@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("ASD Diagnostic Script Loaded (Version 2.1 - Report Ready)");
     const modelSelect = document.getElementById('model-select');
     const form = document.getElementById('predict-form');
     const fileInput = document.getElementById('file-input');
