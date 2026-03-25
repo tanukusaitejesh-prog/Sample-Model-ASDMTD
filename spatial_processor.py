@@ -8,9 +8,14 @@ from scipy.signal import savgol_filter
 try:
     import mediapipe.python.solutions.pose as mp_pose
     import mediapipe.python.solutions.drawing_utils as mp_drawing
-except ImportError:
-    import mediapipe.solutions.pose as mp_pose
-    import mediapipe.solutions.drawing_utils as mp_drawing
+except (ImportError, ModuleNotFoundError):
+    try:
+        from mediapipe.solutions import pose as mp_pose
+        from mediapipe.solutions import drawing_utils as mp_drawing
+    except (ImportError, ModuleNotFoundError):
+        import mediapipe as mp
+        mp_pose = mp.solutions.pose
+        mp_drawing = mp.solutions.drawing_utils
 
 class SpatialSkeletonProcessor:
     def __init__(self, fps=30, confidence_threshold=0.5, ref_frames=10, smooth_window=5, poly_order=2):
