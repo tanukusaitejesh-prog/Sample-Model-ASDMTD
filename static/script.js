@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let motionChart = null;
+    let lastResult = null;
+    let lastFilename = "";
 
     function displayResults(data, isEnsemble) {
         let riskText = data.risk_level.replace('_', ' ');
@@ -138,6 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         riskBanner.className = 'result-header ' + bannerClass;
         riskBadge.textContent = riskText;
+        lastResult = data;
+        lastFilename = fileInput.files[0] ? fileInput.files[0].name : "unknown_video";
+        
+        document.getElementById('download-report').classList.remove('hidden');
         probValue.textContent = Number(data.final_prob).toFixed(4);
         
         confVal.textContent = Number(data.details.confidence).toFixed(4);
@@ -341,4 +347,58 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = '<p class="placeholder-text">No significant rapid motions detected in high-risk zones.</p>';
         }
     }
+    
+    // window.generateReport uses the variables defined at the top
+
+    window.generateReport = async function() {
+        if (!lastResult) return;
+        
+        const btn = document.getElementById('download-report');
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner-small"></span> Generating...';
+        
+        try {
+            // 1. Capture chart as image
+            const chartCanvas = document.getElementById('motion-chart');
+            const chartImage = chartCanvas.toDataURL('image/png');
+            
+            // 2. Prepare payload
+            const payload = {
+                filename: lastFilename,
+                risk_level: lastResult.risk_level,
+                final_prob: lastResult.final_prob,
+                confidence: lastResult.details.confidence || 0,
+                model_agreement: lastResult.details.model_agreement_std || 0,
+                chart_image: chartImage,
+                n_clips: lastResult.details.n_clips || 0,
+                rapid_motion_detected: document.querySelectorAll('.motion-card').length > 0
+            };
+            
+            // 3. Request PDF
+            const res = await fetch('/generate-report', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            
+            if (!res.ok) throw new Error('Failed to generate report');
+            
+            // 4. Download file
+            const blob = await res.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ASD_Report_${new Date().toISOString().slice(0,10)}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            
+        } catch (err) {
+            alert(`Report generation failed: ${err.message}`);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalText;
+        }
+    };
 });

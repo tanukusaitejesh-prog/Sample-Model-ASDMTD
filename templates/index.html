@@ -92,7 +92,12 @@
                 </div>
 
                 <div class="analytics-section">
-                    <h3>3. Temporal Motion Analysis</h3>
+                    <div class="analytics-header">
+                        <h3>3. Temporal Motion Analysis</h3>
+                        <button id="download-report" class="btn-report hidden" onclick="generateReport()">
+                            📄 Download Clinical Report
+                        </button>
+                    </div>
                     <div class="chart-container">
                         <canvas id="motion-chart"></canvas>
                     </div>
