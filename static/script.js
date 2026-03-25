@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.error) {
                 alert(`Error: ${data.error}`);
             } else {
+                console.log("Prediction data received:", data);
                 displayResults(data, modelSelect.value === 'ensemble');
             }
         } catch (err) {
@@ -125,9 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayResults(data, isEnsemble) {
         if (!data || !data.risk_level) {
+            console.error("Invalid data format:", data);
             alert("Error: Incomplete diagnostic data received from server.");
             return;
         }
+        
+        console.log("Showing results card and report button...");
+        const reportBtn = document.getElementById('download-report');
+        if (reportBtn) {
+            reportBtn.classList.remove('hidden');
+            reportBtn.style.display = 'flex'; // Force display
+        } else {
+            console.error("Report button element not found!");
+        }
+
         let riskText = data.risk_level.replace('_', ' ');
         let bannerClass = data.risk_level.toLowerCase();
         
@@ -146,8 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         riskBadge.textContent = riskText;
         lastResult = data;
         lastFilename = fileInput.files[0] ? fileInput.files[0].name : "unknown_video";
-        
-        document.getElementById('download-report').classList.remove('hidden');
         probValue.textContent = Number(data.final_prob).toFixed(4);
         
         confVal.textContent = Number(data.details.confidence).toFixed(4);
