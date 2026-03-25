@@ -61,8 +61,8 @@ async def predict(file: UploadFile = File(...), model_selection: str = Form(...)
     elif file.filename.lower().endswith(('.mp4', '.avi', '.mov')):
         try:
             from spatial_processor import SpatialSkeletonProcessor
-        except ImportError:
-            return {"error": "spatial_processor module not found. Please ensure it is available."}
+        except ImportError as e:
+            return {"error": f"Import failed: {str(e)}"}
             
         # Save temp video
         temp_video_path = f"temp_{file.filename}"
